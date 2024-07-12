@@ -1,0 +1,21 @@
+.underline-hover {
+  position: relative;
+  display: inline-flex;
+  --cms-hover-underline-position-y: calc(100% - 2px);
+  --cms-hover-underline-height: 1px;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(90deg, currentColor 0, currentColor 100%);
+  background-position: 0 var(--cms-hover-underline-position-y);
+  background-size: 0 var(--cms-hover-underline-height);
+  transition:
+    background-size 0.5s cubic-bezier(0.25, 0.46, 0.35, 0.94),
+    color 0.2s ease-out,
+    background-color 0.2s ease-out,
+    border-color 0.2s ease-out;
+  line-height: 1.533;
+}
+
+.underline-hover:hover {
+  --cms-hover-underline-height: 1px;
+  background-size: 100% var(--cms-hover-underline-height);
+}

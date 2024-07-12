@@ -6,14 +6,14 @@ import { Controller } from 'react-hook-form';
 type PasswordControlProps = {
   //TODO:defined type
   useContext: any;
-  nameControll: string;
+  nameControl: string;
   label: string;
   placeholder?: string;
 };
 
 export function PasswordControl({
   useContext,
-  nameControll,
+  nameControl,
   label,
   placeholder = 'Enter your password'
 }: PasswordControlProps) {
@@ -26,7 +26,7 @@ export function PasswordControl({
     <AppFormControl>
       <FormControlLabel>{label}</FormControlLabel>
       <Controller
-        name={nameControll}
+        name={nameControl}
         control={control}
         render={({ field: { onChange, value }, fieldState: { invalid } }) => (
           <Input

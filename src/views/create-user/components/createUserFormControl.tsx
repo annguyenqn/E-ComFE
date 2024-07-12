@@ -1,18 +1,14 @@
-import { EmailControl, PasswordControl } from '@/components/controll';
+import { EmailControl, PasswordControl } from '@/components/control';
 import { schemaKey } from '@/constants/schema';
 import { useCreateUserFormContext } from './ceeateUserFormContext';
 
 const Email = () => (
-  <EmailControl
-    nameControll={schemaKey.email}
-    useContext={useCreateUserFormContext}
-    label='Email'
-  />
+  <EmailControl nameControl={schemaKey.email} useContext={useCreateUserFormContext} label='Email' />
 );
 
 const Password = () => (
   <PasswordControl
-    nameControll={schemaKey.password}
+    nameControl={schemaKey.password}
     useContext={useCreateUserFormContext}
     label='Password'
   />
@@ -20,7 +16,7 @@ const Password = () => (
 
 const ConfirmPassword = () => (
   <PasswordControl
-    nameControll={schemaKey.confirmPassword}
+    nameControl={schemaKey.confirmPassword}
     useContext={useCreateUserFormContext}
     label='Confirm password'
   />

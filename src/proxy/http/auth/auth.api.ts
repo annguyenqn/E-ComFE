@@ -23,6 +23,7 @@ export const authAPI = api.injectEndpoints({
           _extraOptions
         );
         console.log(result);
+        console.log('client nextjs', Date.now());
         if (result.data) {
           LocalStorageService.setItem(
             LocalStorageKey.ACCESS_TOKEN,

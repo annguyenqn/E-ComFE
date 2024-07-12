@@ -16,7 +16,7 @@ export const loginSchemaConfig = {
   password: yup.string().required('Password is required')
 };
 
-export const setPassordSchemaConfig = {
+export const setPasswordSchemaConfig = {
   password: yup
     .string()
     .required('New password is required')
@@ -35,5 +35,5 @@ export const createUserSchemaConfig = {
   firstName: yup.string().required('First name is required'),
   lastName: yup.string().required('Last name is required'),
   role: yup.string().oneOf(Roles, 'Invalid role').required('Role is required'),
-  ...setPassordSchemaConfig
+  ...setPasswordSchemaConfig
 };

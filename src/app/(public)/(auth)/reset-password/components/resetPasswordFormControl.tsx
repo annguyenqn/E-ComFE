@@ -1,17 +1,17 @@
-import { PasswordControl } from '@/components/controll';
+import { PasswordControl } from '@/components/control';
 import { schemaKey } from '@/constants/schema';
 import { useResetPasswordFormContext } from './useResetPasswordFormControl';
 
 const Password = () => (
   <PasswordControl
-    nameControll={schemaKey.password}
+    nameControl={schemaKey.password}
     useContext={useResetPasswordFormContext}
     label='Password'
   />
 );
 const ConfirmPassword = () => (
   <PasswordControl
-    nameControll={schemaKey.confirmPassword}
+    nameControl={schemaKey.confirmPassword}
     useContext={useResetPasswordFormContext}
     label='Confirm Password'
     placeholder='Enter confirm password'

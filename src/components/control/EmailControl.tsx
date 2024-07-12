@@ -6,10 +6,10 @@ import { Controller } from 'react-hook-form';
 type EmailControlProps = {
   label: string;
   useContext: any;
-  nameControll: string;
+  nameControl: string;
 };
 
-export function EmailControl({ label, useContext, nameControll }: EmailControlProps) {
+export function EmailControl({ label, useContext, nameControl }: EmailControlProps) {
   const {
     control,
     formState: { errors }
@@ -19,7 +19,7 @@ export function EmailControl({ label, useContext, nameControll }: EmailControlPr
     <AppFormControl>
       <FormControlLabel>{label}</FormControlLabel>
       <Controller
-        name={nameControll}
+        name={nameControl}
         control={control}
         render={({ field: { onChange, value }, fieldState: { invalid } }) => (
           <Input

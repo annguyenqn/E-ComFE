@@ -6,13 +6,13 @@ import '../styles/globals.css';
 const fontKarla = FontKarla({
   subsets: ['latin'],
   variable: '--font-karla',
-  weight: '400'
+  weight: ['400', '500']
 });
 
 const fontPoppins = FontPoppins({
   subsets: ['latin'],
   variable: '--font-poppins',
-  weight: '400'
+  weight: ['400', '500']
 });
 
 export default function RootLayout({

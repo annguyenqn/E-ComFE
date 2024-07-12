@@ -18,8 +18,8 @@ export default function SignInForm({ ...props }) {
   const [login] = useLoginMutation();
   const onSubmit = async (formPayload: LoginRequest) => {
     dispatch(setIsLoading(true));
-    await login(formPayload);
-    router.replace(PagePath.MAIN);
+    const res = await login(formPayload);
+    console.log(res);
   };
 
   return (
@@ -28,7 +28,7 @@ export default function SignInForm({ ...props }) {
         <div className='grid gap-2'>
           <div className='grid gap-3'>
             <SignInFormControl.Email />
-            {/* <SignInFormControl.Password /> */}
+            <SignInFormControl.Password />
           </div>
           <Button onClick={form.handleSubmit(onSubmit)} disabled={false}>
             {false && <Icons.spinner className='mr-2 h-4 w-4 animate-spin' />}

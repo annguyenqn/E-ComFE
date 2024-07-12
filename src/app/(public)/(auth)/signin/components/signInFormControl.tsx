@@ -1,41 +1,15 @@
-import { AppFormControl } from '@/components/form/formControl';
-import { FormControlLabel } from '@/components/form/formControl/FormControlLabel';
-import { Input } from '@/components/ui/input';
-import { Controller } from 'react-hook-form';
 import { useSigninFormContext } from './useSignInFormControl';
+import { EmailControl, PasswordControl } from '@/components/control';
 
 const Email = () => {
-  const {
-    control,
-    formState: { errors }
-  } = useSigninFormContext();
+  return <EmailControl nameControl='email' useContext={useSigninFormContext} label='Email' />;
+};
 
+const Password = () => {
   return (
-    <AppFormControl>
-      <FormControlLabel>Email</FormControlLabel>
-      <Controller
-        name={'email'}
-        control={control}
-        render={({ field: { onChange, value }, fieldState: { invalid } }) => (
-          <Input
-            placeholder='Enter your email'
-            type='email'
-            autoCapitalize='none'
-            onChangeText={onChange}
-            value={value}
-            isInvalid={invalid}
-            name='email'
-          />
-        )}
-      />
-      <AppFormControl.ErrorMessage>{errors.email?.message}</AppFormControl.ErrorMessage>
-    </AppFormControl>
+    <PasswordControl nameControl='password' useContext={useSigninFormContext} label='Password' />
   );
 };
 
-// const Password = () => (
-//   <PasswordControl nameControll='password' useContext={useSigninFormContext} label='Password' />
-// );
-
-const SignInFormControl = { Email };
+const SignInFormControl = { Email, Password };
 export { SignInFormControl };

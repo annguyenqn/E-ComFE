@@ -1,4 +1,4 @@
-import { setPassordSchemaConfig } from '@/constants/schema';
+import { setPasswordSchemaConfig } from '@/constants/schema';
 import ResetPasswordFormField from '@/types/ResetPasswordFormField';
 import { yupResolver } from '@hookform/resolvers/yup';
 import React from 'react';
@@ -9,7 +9,7 @@ export type ResetPasswordFormContextData = ReturnType<typeof useResetPasswordFor
 export const ResetPasswordFormContext = React.createContext({} as ResetPasswordFormContextData);
 
 const useResetPasswordFormResolver = () => {
-  const schema = yup.object<ResetPasswordFormField>().shape(setPassordSchemaConfig);
+  const schema = yup.object<ResetPasswordFormField>().shape(setPasswordSchemaConfig);
   return yupResolver(schema, { abortEarly: false });
 };
 
