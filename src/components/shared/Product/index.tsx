@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { Button } from '../../ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Badge } from '../../ui/badge';
@@ -37,13 +36,7 @@ const ProductCard = () => {
                 <Heart className='cursor-pointer hover:text-red-500' />
               </div>
               <div className='basis-full text-center uppercase box-border border-x-2'>
-                <TextLink
-                  handleClick={() => {
-                    alert('test');
-                  }}
-                >
-                  Add to cart
-                </TextLink>
+                <TextLink>Add to cart</TextLink>
               </div>
               <div className='flex-auto px-[20px]'>
                 <Eye className='cursor-pointer hover:text-blue-400' />

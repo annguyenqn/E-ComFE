@@ -5,18 +5,12 @@ import './text-link.css';
 
 const TextLink = ({
   children,
-  handleClick
+  ...rest
 }: {
   children: React.ReactNode;
-  handleClick: () => void;
-}) => {
+} & React.HTMLAttributes<HTMLSpanElement>) => {
   return (
-    <span
-      className='cursor-pointer underline-hover'
-      onClick={() => {
-        handleClick();
-      }}
-    >
+    <span className='cursor-pointer underline-hover' {...rest}>
       {children}
     </span>
   );

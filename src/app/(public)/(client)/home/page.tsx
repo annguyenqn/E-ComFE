@@ -1,5 +1,4 @@
-import { Button } from '@/components/ui/button';
-// import { ImagesSlider } from '@/components/ui/images-slider';
+import { Button } from '@/components/shared/Button';
 import { ImagesSlider } from '@/components/shared/Slider';
 import { InfiniteMovingCards } from '@/components/ui/infinite-moving-cards';
 import { StickyScroll } from '@/components/ui/sticky-scroll-reveal';
@@ -7,14 +6,8 @@ import Image from 'next/image';
 import React from 'react';
 import '@/styles/sticky-scroll-reveal.css';
 import ProductCard from '@/components/shared/Product';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious
-} from '@/components/ui/carousel';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/shared/Tabs';
+import CategoryBanner from '@/components/shared/Category';
 
 const images = ['/slider-1-scaled.webp', 'slider-2.webp'];
 
@@ -58,52 +51,92 @@ const contents = [
 
 const tabs = [
   {
-    title: 'New',
-    value: 'new',
-    content: <div className='bg-slate-400'>New Products</div>
+    title: 'HOT ITEMS',
+    value: 'hot',
+    content: (
+      <div className='grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 place-items-center xl:-mx-[20px]'>
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+      </div>
+    )
     // list: ['product1', 'product2', 'product3']
     // content: <ProductList list={list} />
   },
   {
-    title: 'Hot',
-    value: 'hot',
-    content: <div>Hot Products</div>
+    title: 'NEW ARRIVALS',
+    value: 'new',
+    content: (
+      <div className='grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 place-items-center xl:-mx-[20px]'>
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+      </div>
+    )
   },
   {
-    title: 'Sale',
+    title: 'ON SALE',
     value: 'sale',
-    content: <div>Sale Products</div>
+    content: (
+      <div className='grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 place-items-center xl:-mx-[20px]'>
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+      </div>
+    )
   }
 ];
 
 const Home = () => {
   return (
     <>
-      <div className='h-screen'>
+      <div className='lg:h-[700px] md:h-[600px] h-[650px]'>
         <ImagesSlider images={images}>
           <div className='flex flex-col items-center justify-center h-full text-white z-10 '>
             <h1 className='text-3xl font-bold'>Welcome to our website</h1>
             <p className='text-lg'>We are happy to have you here</p>
-            <Button className='font-semibold p-6'>SHOP NOW</Button>
+            <Button variant='white'>MUA HÀNG</Button>
           </div>
         </ImagesSlider>
       </div>
-      <div className='container pt-[100px]'>
+      <div className='container py-[100px] '>
         <div className='pb-[20px]'>
           <div className='text-center text-base pb-[10px]'>NEW AND EXTRAORDINARY</div>
           <div className='text-center text-4xl font-medium'>Featured Products</div>
         </div>
-        <div className='grid grid-cols-4 -mx-[20px]'>
+        <div className='grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 place-items-center xl:-mx-[20px]'>
           <ProductCard />
           <ProductCard />
           <ProductCard />
           <ProductCard />
         </div>
+        <div className='flex justify-center items-center pt-[20px]'>
+          <Button variant='white'>Xem tất cả</Button>
+        </div>
       </div>
-      <div className='container mx-auto'>
+      <div className='grid md:grid-cols-3 sm:grid-cols-2 place-items-center md:px-[40px] py-[10px]'>
+        <CategoryBanner />
+        <CategoryBanner />
+        <CategoryBanner />
+      </div>
+      <div className='container mx-auto pt-[90px] pb-[80px] px-[10px]'>
         <Tabs defaultValue={tabs[0].value} className='text-center'>
           <TabsList className='bg-transparent'>
             {tabs.map((tab, index) => {
+              if (tab.value === 'sale') {
+                return (
+                  <TabsTrigger
+                    key={`${tab.title}-${index}`}
+                    value={tab.value}
+                    className='data-[state=active]:border-b-2 data-[state=active]:text-[#ff0000] text-[#ff0000] border-b-[#ff0000]'
+                  >
+                    {tab.title}
+                  </TabsTrigger>
+                );
+              }
               return (
                 <TabsTrigger key={`${tab.title}-${index}`} value={tab.value}>
                   {tab.title}
@@ -124,7 +157,12 @@ const Home = () => {
         <StickyScroll content={contents} />
       </div>
       <InfiniteMovingCards items={items} />
-      <div className='h-[1000px]'></div>
+      <div className='h-[1000px]'>
+        <Button variant='white' className='mx-4 mt-4 '>
+          White
+        </Button>
+        <Button>Black</Button>
+      </div>
     </>
   );
 };
