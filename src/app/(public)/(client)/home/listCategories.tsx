@@ -13,7 +13,7 @@ const ListCategories = () => {
       ref={targetRef}
       className={clsx(
         'grid md:grid-cols-3 sm:grid-cols-2 place-items-center md:px-[40px] pt-[110px] pb-[10px]',
-        { 'animate-left-to-right': inViewport }
+        { 'lg:animate-left-to-right': inViewport }
       )}
     >
       <CategoryBanner />

@@ -54,7 +54,7 @@ const TabProducts = () => {
     <div
       ref={targetRef}
       className={clsx('container pt-[90px] pb-[90px] px-[10px]', {
-        'animate-fade-in-up': inViewport
+        'lg:animate-fade-in-up': inViewport
       })}
     >
       <Tabs defaultValue={tabs[0].value} className='text-center'>
