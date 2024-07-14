@@ -1,3 +1,4 @@
+import { transform } from 'lodash';
 import type { Config } from 'tailwindcss';
 const colors = require('tailwindcss/colors');
 const { default: flattenColorPalette } = require('tailwindcss/lib/util/flattenColorPalette');
@@ -91,13 +92,33 @@ const config = {
         'accordion-up': {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' }
+        },
+        'fade-in-up-animation': {
+          '0%': { opacity: '0', transform: 'translate3d(0, 100%, 0)' },
+          '100%': { opacity: '1', transform: 'none' }
+        },
+        'left-to-right-animation': {
+          '0%': { opacity: '0', transform: 'translateX(-100%)' },
+          '100%': { opacity: '1', transform: 'none' }
+        },
+        'right-to-left-animation': {
+          '0%': { opacity: '0', transform: 'translateX(100%)' },
+          '100%': { opacity: '1', transform: 'none' }
+        },
+        'zoom-in-animation': {
+          '0%': { opacity: '0', transform: 'translate(-50%, -50%) scale3d(0.3, 0.3, 0.3)' },
+          '50%': { opacity: '1' }
         }
       },
       animation: {
         scroll:
           'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite',
         'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out'
+        'accordion-up': 'accordion-up 0.2s ease-out',
+        'fade-in-up': 'fade-in-up-animation 1.25s',
+        'left-to-right': 'left-to-right-animation 1.25s',
+        'right-to-left': 'right-to-left-animation 1.25s',
+        'zoom-in': 'zoom-in-animation 1.25s'
       }
     }
   },
