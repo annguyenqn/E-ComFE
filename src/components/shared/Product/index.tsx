@@ -20,14 +20,14 @@ const ProductCard = () => {
             alt='img1'
             width={400}
             height={500}
-            className='group-hover:opacity-0 transition-opacity duration-350 ease-in-out'
+            className='group-hover:opacity-0 transition-opacity duration-500 ease-in-out'
           />
           <Image
             src='https://demo.cmssuperheroes.com/themeforest/chani/wp-content/uploads/Dust-Lightweight-Jacket-2-400x500.jpg'
             alt='img2'
             width={400}
             height={500}
-            className='absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-350 ease-in-out transform scale-100 group-hover:scale-105'
+            className='absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out transform scale-100 group-hover:scale-105'
           />
           <Link href='/' className='absolute inset-0 z-10'></Link>
           <div className='py-3.5 absolute bottom-0 left-0 right-0 bg-background z-10 transform translate-y-full transition-transform duration-300 ease-linear group-hover:translate-y-0'>
