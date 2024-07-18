@@ -1,8 +1,8 @@
 'use client';
+
 import { cn } from '@/lib/utils/cn';
 import { motion, AnimatePresence } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
-import './images-slider.css';
 
 export const ImagesSlider = ({
   images,
@@ -55,6 +55,7 @@ export const ImagesSlider = ({
       })
       .catch((error) => console.error('Failed to load images', error));
   };
+
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'ArrowRight') {
@@ -138,7 +139,7 @@ export const ImagesSlider = ({
             animate='visible'
             exit={direction === 'up' ? 'upExit' : 'downExit'}
             variants={slideVariants}
-            className='image h-full w-full absolute inset-0 object-cover object-center img-slider'
+            className='h-full w-full absolute inset-0 object-cover object-center transition-all duration-[300ms] linear animate-cms-slider-zoom'
           />
         </AnimatePresence>
       )}

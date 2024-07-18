@@ -8,6 +8,7 @@ import ListCategories from './listCategories';
 import TabProducts from './tabProducts';
 import ReasonsToBuy from './reasonsToBuy';
 import GalleryProducts from './galleryProducts';
+import { TextGenerateEffect } from '@/components/ui/text-generate-effect';
 
 const images = ['/slider-1-scaled.webp', 'slider-2.webp'];
 
@@ -22,8 +23,8 @@ const Home = () => {
       <div className='lg:h-[700px] md:h-[600px] h-[650px]'>
         <ImagesSlider images={images}>
           <div className='flex flex-col items-center justify-center h-full text-white z-10 '>
-            <h1 className='text-3xl font-bold'>Welcome to our website</h1>
-            <p className='text-lg'>We are happy to have you here</p>
+            <p className='text-xl'>We are happy to have you here</p>
+            <div className='mb-3'><TextGenerateEffect words='So Fashionable,True Elegant' /></div>
             <Button variant='white'>MUA HÀNG</Button>
           </div>
         </ImagesSlider>

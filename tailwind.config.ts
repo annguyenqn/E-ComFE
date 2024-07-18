@@ -85,6 +85,10 @@ const config = {
             transform: 'translate(calc(-50% - 0.5rem))'
           }
         },
+        'cms-slider-zoom': {
+          '0%': { transform: 'scale(1.5)' },
+          '100%': { transform: 'scale(1)' },
+        },
         'accordion-down': {
           from: { height: '0' },
           to: { height: 'var(--radix-accordion-content-height)' }
@@ -111,6 +115,7 @@ const config = {
         }
       },
       animation: {
+        'cms-slider-zoom': 'cms-slider-zoom 4000ms infinite',
         scroll:
           'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite',
         'accordion-down': 'accordion-down 0.2s ease-out',
