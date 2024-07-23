@@ -139,7 +139,7 @@ export const ImagesSlider = ({
             animate='visible'
             exit={direction === 'up' ? 'upExit' : 'downExit'}
             variants={slideVariants}
-            className='h-full w-full absolute inset-0 object-cover object-center transition-all duration-[300ms] linear animate-cms-slider-zoom'
+            className='h-full w-full absolute inset-0 object-cover object-center transition-all duration-&lsqb;300ms&rsqb; linear animate-cms-slider-zoom'
           />
         </AnimatePresence>
       )}
