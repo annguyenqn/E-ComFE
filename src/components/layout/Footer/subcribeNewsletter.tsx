@@ -19,15 +19,15 @@ const SubcribeNewsletter = () => {
           <div className='text-2xl'>Our store</div>
           <Link href='#'>Địa chỉ</Link>
         </div>
-        <div className='lg:w-2/4 w-full'>
+        <div className='lg:w-2/4 w-full flex-col gap-10  h-52'>
           <div className='text-5xl text-center font-medium'>
             Subcribe To
             <br />
             Our Newsletter
           </div>
-          <div className='flex'>
-            <Input className='' placeholder='Email của bạn' />
-            <Button className=''>SUBCRIBE</Button>
+          <div className='flex w-full mt-10'>
+            <div className='w-3/4'><Input className='' placeholder='Email của bạn' /></div>
+            <div className='w-1/4'><Button className=''>SUBCRIBE</Button></div>
           </div>
         </div>
         <div className='lg:w-1/4 sm:w-2/4 hidden lg:block w-full'>Our store</div>
